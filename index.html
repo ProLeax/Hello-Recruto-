@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Recruto</title>
+    <script>
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            const name = params.get('name') || 'Recruto';
+            const message = params.get('message') || 'Давай дружить';
+            return { name, message };
+        }
+        function displayMessage() {
+            const { name, message } = getQueryParams();
+            document.getElementById('greeting').textContent = `Hello ${name}! ${message}`;
+        }
+        window.onload = displayMessage;
+    </script>
+</head>
+<body>
+    <h1 id="greeting"></h1>
+</body>
+</html>
